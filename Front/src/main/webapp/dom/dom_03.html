@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+window.onload = function() {
+	
+	//<img>태그 요소 노드 생성
+	var img = document.createElement("img")
+	console.log( img )
+	
+	//-------------------------------------------
+	
+	//<img>태그의 표준 속성
+	//	src, alt, width, height, ...
+	//	id, class, style, title, ...
+	
+	//** 표준 속성(Attribute)은
+	//	DOM객체의 속성(Property)으로 사용할 수 있다
+	
+	img.src = '../resources/image/mi.jpg'
+	img.alt = '미니언즈'
+	
+	img.width = '600'
+	img.height = '400'
+	
+	
+	//<body>태그에 img객체 추가하기
+	//	-> 화면에 보여짐
+	document.body.appendChild( img )
+	
+	//-------------------------------------------
+	
+	//비 표준 속성 적용하기
+	//	(적용되지 않는다)
+	img.abc = '123'
+	
+	//-------------------------------------------
+	
+	//비 표준 속성값 지정하기
+	img.setAttribute("qwe", '456')
+	
+	//표준 속성값 지정하기
+	img.setAttribute("style", "border: 1px solid #ccc")
+	
+	//-------------------------------------------
+	
+	console.log("src", img.src)
+	
+	console.log("qwe", img.getAttribute("qwe"))
+	console.log("alt", img.getAttribute("alt"))
+	
+}
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

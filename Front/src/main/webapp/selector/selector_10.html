@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* 보여지는 화면의 첫번째 줄 선택 */
+p::first-line {
+	color: blue;
+}
+
+/* 문장의 첫번째 글자 선택 */
+p::first-letter {
+	color: red;
+	font-size: 20px;
+}
+
+/* ----------------------------------------------------- */
+
+/* span태그의 앞부분에 가상 요소를 추가한다 */
+span::before {
+	
+	/* 가상 요소에 적용될 컨텐츠(내용물) */
+/* 	content: "span <br> before"; */
+	content: "span \A before";
+	
+	/* \A	- 개행문자(ASCII 10)를 나타낸다 */
+	
+	/* 공백문자 처리방식 변경하기 */
+	white-space: pre;
+	
+	
+	
+	
+	
+	/* 가상 요소에 CSS스타일 적용할 수 있다 */
+	color: orange;
+	background-color: gray;
+}
+
+/* ------------------------------------------- */
+
+.new::after {
+	content: "new";
+	
+	font-size: 10px;
+	background-color: #f66;
+	color: #fff;
+
+	padding: 0 2px;
+	
+	border-radius: 3px;
+	
+	/* 수직 정렬 */
+/* 	vertical-align: baseline; */
+	vertical-align: middle;
+}
+
+/* ------------------------------------------- */
+
+/* 클래스 속성값으로 new가 없는 p태그 선택 */
+p:not(.new) {
+	background-color: #eee;
+}
+
+</style>
+
+</head>
+<body>
+
+<p class="new">첫 번째(p)</p>
+<span>두 번째(span)</span>
+<div class="new">세 번째(div)</div>
+<p>네 번째(p). 노새, 차 걱정도 파란 무성할 불러<br><br>
+ 다 아침이 있습니다. 추억과 너무나 이웃 라이너
+  부끄러운 하나에 이름자를 이국 옥 버리었습니다.</p>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

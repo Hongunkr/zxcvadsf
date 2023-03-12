@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//전역 변수
+var result
+
+//덧셈 함수
+function add(n1, n2) {
+	
+	//전역 변수에 덧셈 결과 저장하기
+	result = n1 + n2
+	
+}
+
+//결과 출력 함수
+function print() {
+	
+	//전역 변수에 저장된 값 출력하기
+	console.log("result", result)
+	
+}
+
+//덧셈 수행
+add( 456, 890 )
+
+//출력
+print()
+
+//--------------------------------------------
+
+//콜백 함수, Callback Function
+//	 함수를 직접 호출해서 사용하지 않고
+//	외부의 동작에 의해서 호출되도록 만들어진 함수
+
+function sum( n1, n2, callback ) {
+	
+	//덧셈 수행
+	var res = n1 + n2
+	
+	//결과값을 이용한 함수 호출
+	callback( res ) //콜백(call back)
+	
+}
+
+//--------------------------------------------
+
+//결과값을 console로 출력하는 함수
+function display1( data ) {
+
+	console.log("덧셈 결과", data)
+	
+}
+
+//sum함수 호출
+sum( 11, 22, display1 )
+
+//--------------------------------------------
+
+//결과값을 alert로 띄우는 함수
+function display2( data ) {
+	alert("결과값 : " + data)
+}
+
+//sum함수 호출
+sum( 55, 66, display2 )
+
+//--------------------------------------------
+
+//** 콜백으로 사용되는 함수를 매번 다르게 적용될 수 있다
+//** sum함수의 결과 출력 동작을 다양하게 선택할 수 있다
+
+//--------------------------------------------
+
+//익명함수로 콜백함수 전달인자 전달하기
+sum( 88, 99, function( data ) {
+	
+	//<body>영역에 출력하기
+	document.write("<h1>" + data + "</h1>")
+	
+})
+
+//--------------------------------------------
+
+function display3() {
+	console.log("테스트3 클릭!")
+}
+
+</script>
+
+</head>
+<body>
+
+<button onclick="alert('hi')">테스트</button>
+
+<button onclick="console.log('hello')">테스트2</button>
+
+<!-- --------------------------------------------- -->
+
+<button onclick="display3()">테스트3</button>
+
+<!-- --------------------------------------------- -->
+
+<button id="btnTest">테스트4</button>
+
+<script type="text/javascript">
+
+// id속성값이 btnTest인 요소 객체에
+//click이벤트가 발생했을 경우
+//호출할 콜백함수를 대입한다
+btnTest.onclick = function() {
+	console.log("익명함수로 이벤트 처리 콜백함수 적용")
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

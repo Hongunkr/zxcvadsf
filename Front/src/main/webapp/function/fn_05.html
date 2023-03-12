@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+var data1 = 123;
+
+let data2 = 456;
+const data3 = 789;
+
+//--------------------------------------------
+
+//var변수는 이미 선언된 변수이름을 다시 사용해도 된다
+//이전에 만들어진 변수를 가져와서 사용한다
+
+var data4 = 77;
+var data4 = 88;
+var data4 = 99;
+//--------------------------------------------
+
+//에러, let변수는 이미 사용한 변수이름을 사용할 수 없다
+let data5 = 11;
+// let data5 = 22;
+//--------------------------------------------
+
+//에러, const변수는 이미 사용한 변수이름을 사용할 수 없다
+const data6 = 33;
+// const data6 = 44;
+
+//--------------------------------------------
+
+//호이스팅
+// console.log("data7", data7)	//에러
+
+let data7 = 55;
+
+console.log("data7", data7)
+//--------------------------------------------
+
+//에러, const변수는 초기화없이 선언할 수 없다
+// const data8;
+
+const data8 = 99;
+
+//에러, const변수는 값을 변경할 수 없다 (상수)
+// data8 = 88;
+//--------------------------------------------
+
+//블록 지역 스코프
+{
+	let block_let = 50;
+	console.log("block_let", block_let)
+}
+
+//에러, let, const변수는 block, function 스코프 모두 적용
+// console.log("block_let", block_let)
+
+for(let i=0; i<10; i++) {}
+
+//에러, for블록 지역 스코프에 영향을 받는다
+// console.log('i', i)
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
